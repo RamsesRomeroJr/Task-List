@@ -29,7 +29,7 @@ export const restoreUser = () => async (dispatch) => {
 
 export const signup = (user) => async (dispatch) => {
   const { username, email, password } = user;
-  const response = await fetch('/api/users', {
+  const res = await fetch('/api/users', {
     method: 'POST',
     body: JSON.stringify({
       username,
@@ -38,16 +38,16 @@ export const signup = (user) => async (dispatch) => {
     })
   });
 
-  dispatch(setUser(response.data.user));
-  return response;
+  dispatch(setUser(res.data.user));
+  return res;
 };
 
 export const logout = () => async (dispatch) => {
-  const response = await fetch('/api/session', {
+  const res = await fetch('/api/session', {
     method: 'DELETE'
   });
   dispatch(removeUser());
-  return response;
+  return res;
 };
 
 const initialState = { user: null };
