@@ -18,10 +18,7 @@ const validateLogin = [
 ];
 
 //check if user already logged in and preserve session
-router.get(
-  '/',
-  restoreUser,
-  (req, res) => {
+router.get('/',restoreUser,(req, res) => {
     const { user } = req;
     if (user) {
       return res.json({
@@ -32,10 +29,7 @@ router.get(
 );
 
 //login
-router.post(
-  '/',
-  validateLogin,
-  asyncHandler(async (req, res, next) => {
+router.post('/',validateLogin,asyncHandler(async (req, res, next) => {
     const { credential, password } = req.body;
 
     const user = await User.login({ credential, password });
@@ -57,9 +51,7 @@ router.post(
 );
 
 //logout
-router.delete(
-    '/',
-    (_req, res) => {
+router.delete('/',(_req, res) => {
         res.clearCookie('token');
         return res.json({ message: 'success' });
     }
