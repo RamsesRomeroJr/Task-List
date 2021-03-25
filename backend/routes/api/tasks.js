@@ -80,4 +80,49 @@ router.put('/check/:id', asyncHandler(async(req,res) => {
     res.json({task: task})
 }))
 
+router.post('/create', asyncHandler(async(req,res) => {
+    const {
+        listId,
+        userId,
+        title,
+        description
+    } = req.body
+
+    await Task.create(
+        {listId,userId,title,description, complete:false}
+    )
+
+    res.json({message: 'good'})
+}));
+
+router.delete('/delete/:id', asyncHandler(async(req,res) => {
+    const taskId = Number(req.params.id);
+
+    const task = await Task.findOne({
+        where: {
+            id: taskId
+        },
+        include: [{
+            model: Comment
+        }]
+    })
+
+    for(let i =0; i< task.Comments.length; i++){
+        let comment = task.Comments[i]
+        await Comment.destroy({
+            where: {
+                id: comment.id
+            }
+        })
+    }
+
+    await Task.destroy({
+        where:{
+            id: taskId
+        }
+    })
+
+    res.json({message: 'deleted'})
+}))
+
 module.exports = router;
