@@ -4,6 +4,7 @@ const router = express.Router()
 
 const {User,List, Task, Comment} = require('../../db/models');
 
+
 router.get('/', asyncHandler(async (req,res) =>{
 
     const list = await List.findAll( {
