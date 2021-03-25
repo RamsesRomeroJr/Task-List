@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Task.hasMany(models.Comment, {foreignKey: 'taskId'});
     Task.belongsTo(models.List, {foreignKey: 'listId'})
+    Task.belongsTo(models.User, {foreignKey: 'userId'})
   };
   return Task;
 };

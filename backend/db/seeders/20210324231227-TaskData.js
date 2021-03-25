@@ -5,6 +5,7 @@ module.exports = {
       return queryInterface.bulkInsert('Tasks', [
         {
           listId: 1,
+          userId: 1,
           title: 'Bite Shoes',
           description: 'Find my owners favorite pair of shoes and start chewing it like a steak',
           complete: true,
@@ -13,6 +14,7 @@ module.exports = {
         },
         {
           listId: 1,
+          userId: 1,
           title: 'eat',
           description: 'find food bowl, see whats for today and CHOW DOWN',
           complete: false,
@@ -21,6 +23,7 @@ module.exports = {
         },
         {
           listId: 1,
+          userId: 1,
           title: 'Protect House',
           description: 'Watch out for intruders and squirrels and alert the boss',
           complete: false,
@@ -29,6 +32,7 @@ module.exports = {
         },
         {
           listId: 2,
+          userId: 2,
           title: 'pack',
           description: 'Pack clothes and snacks for the long trip',
           complete: true,
@@ -37,6 +41,7 @@ module.exports = {
         },
         {
           listId: 2,
+          userId: 2,
           title: 'routes',
           description: 'plan the pit stops for the road trip and place to stop at for pics',
           complete: true,
@@ -45,6 +50,7 @@ module.exports = {
         },
         {
           listId: 2,
+          userId: 2,
           title: 'Pick up friends',
           description: 'pick everyone up and get hype',
           complete: false,
@@ -53,6 +59,7 @@ module.exports = {
         },
         {
           listId: 3,
+          userId: 3,
           title: 'Pick a Canidate',
           description: 'go through stack of applicants and choose a the perfect canidate',
           complete: true,
@@ -61,6 +68,7 @@ module.exports = {
         },
         {
           listId: 3,
+          userId: 3,
           title: 'Interview Canidate',
           description: 'Interview the canidate to make sure they\'re a good fit for the role ' ,
           complete: false,
@@ -69,6 +77,7 @@ module.exports = {
         },
         {
           listId: 3,
+          userId: 3,
           title: 'Hire',
           description: 'after interviewing the canidate reach out with a offer letter and congradulate them',
           complete: false,

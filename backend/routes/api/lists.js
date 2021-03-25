@@ -24,6 +24,21 @@ router.get('/', asyncHandler(async (req,res) =>{
     });
 
     res.json({lists: list})
+}));
+
+router.get('/task/:id', asyncHandler(async(req,res) => {
+
+    const task = await Task.findAll( {
+        include: [
+            {
+                model: Comment
+            },
+            {
+                model: User
+            }
+        ]
+    })
+    res.json({task: task})
 }))
 
 module.exports = router;
