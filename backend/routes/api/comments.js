@@ -35,4 +35,14 @@ router.put('/update/:id', asyncHandler(async(req,res) => {
     res.json({message: 'updated'})
 }))
 
+router.delete('/delete/:id', asyncHandler(async(req,res) => {
+    const commentId = Number(req.params.id)
+
+    await Comment.destroy(
+        {where: {id: commentId}}
+    )
+
+    res.json({message: 'deleted'})
+}))
+
 module.exports = router;
