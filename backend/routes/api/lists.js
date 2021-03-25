@@ -13,13 +13,16 @@ router.get('/', asyncHandler(async (req,res) =>{
             },
             {
                 model: Task,
+                order: [
+                    [Task, 'creatidedAt', 'ASC']
+                ],
                 include : {
                     model: Comment
                 }
-            }
+            },
         ]
     });
-    // const list = await List.findAll({ include: { all: true, nested: true }});
+
     res.json({lists: list})
 }))
 
