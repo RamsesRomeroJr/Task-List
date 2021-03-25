@@ -1,0 +1,56 @@
+.profile-dropdown {
+    position: absolute;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid green;
+    padding: 10px;
+    margin-top: 4px;
+    font-family: 'Staatliches', cursive;
+    font-weight:3;
+    color: grey;
+  }
+
+  .NavBar{
+    box-shadow: 0 4px 2px -2px gray;
+    height: 103px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* font-size: 1.2rem; */
+    /* position: sticky; */
+    top: 0;
+    z-index: 999;
+    /* --neon-text-color: green; */
+    --neon-border-color: green;
+    animation: flicker 0s infinite alternate;
+  }
+
+  .home-Link{
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+
+  .login-button{
+    margin-right: 35px;
+  }
+
+  .login-signup{
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .title{
+    height: 100px;
+    justify-self: center;
+    align-self: flex-start;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.title:hover{
+    color: rgb(0,140,151);
+  }
