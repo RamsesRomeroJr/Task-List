@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 import SignupFormPage from '../SignupFormPage/index.js'
+import LoginFormPage from '../LoginFormPage/index.js'
 
 const Splash = styled.div`
     display:flex;
@@ -72,7 +73,7 @@ const LoginButton = styled.button`
 
 function SplashPage(){
 
-    let [signupForm, setSignupForm] = useState(true);
+    let [signupForm, setSignupForm] = useState(false);
 
     return(
         <Splash>
@@ -89,7 +90,7 @@ function SplashPage(){
                         <SignupFormPage />
                     }
                     {!signupForm &&
-                        <h1> login component</h1>
+                        <LoginFormPage />
                     }
                 </RightSide>
             </Container>

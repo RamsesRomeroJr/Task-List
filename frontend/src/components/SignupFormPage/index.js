@@ -10,7 +10,7 @@ const Input = styled.input`
   margin-top:10px;
   padding: 8px 0 8px 8px;
   border:solid 0.5px lightgrey;
-  /* box-shadow: 0 1px 2px 0px rgba(0,0,0,0.6); */
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.6);
   justify-self: center;
   background-color:#FCFAF0;
   color:grey;
@@ -59,7 +59,7 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form onSubmit={handleSubmit} >
       <div className='formContainer'>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
