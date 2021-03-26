@@ -1,19 +1,49 @@
 import { fetch } from './csrf.js'
 
 const SET_LISTS = 'lists/setLists'
-const REMOVE_LIST = 'lists/removeList'
 
 const setLists = (lists) => ({
     type: SET_LISTS,
     payload: lists
 });
 
-const removeList = () => ({
-    type:REMOVE_LIST
-})
-
 export const getLists = () => async (dispatch) => {
-    const res = await fetch('./api/lists');
+    const res = await fetch('/api/lists');
+    dispatch(setLists(res.data.lists));
+    return res;
+}
+
+export const createList = ({userId, title}) => async (dispatch) => {
+    const res = await fetch('/api/lists/create', {
+        method: 'POST',
+        body: JSON.stringify({
+            userId,
+            title
+        })
+    })
+    dispatch(setLists(res.data.lists));
+    return res;
+}
+
+export const updateList = ({userId, title, listId}) => async (dispatch) => {
+    const res = await fetch(`/api/lists/update/${listId}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            userId,
+            title
+        })
+    })
+    dispatch(setLists(res.data.lists));
+    return res;
+}
+
+export const deleteList = ({userId, listId}) => async (dispatch) => {
+    const res = await fetch(`/api/lists/delete/${listId}`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+            userId
+        })
+    })
     dispatch(setLists(res.data.lists));
     return res;
 }

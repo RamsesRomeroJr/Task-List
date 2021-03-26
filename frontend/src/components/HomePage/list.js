@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import { NavLink } from "react-router-dom";
 import Task from './task.js'
+import {deleteList} from '../../store/lists.js'
+import {useDispatch, useSelector} from 'react-redux'
 
 const ListContainer = styled.div`
     border:solid 0.5px lightgrey;
@@ -66,6 +68,13 @@ const TaskContainer = styled.div`
 function List ({list}){
     const user = list.User
     const tasks = list.Tasks
+    const sessionUser = useSelector((state) => state.session.user)
+
+    const dispatch = useDispatch()
+
+    function deleteListClick (){
+        dispatch(deleteList({userId: sessionUser.id, listId: list.id}))
+    }
 
     return (
         <ListContainer>
@@ -74,7 +83,7 @@ function List ({list}){
                     <i class="fas fa-pen-square"></i>
                 </Buttons>
                 <Title>{list.title}</Title>
-                <Buttons>
+                <Buttons onClick={deleteListClick}>
                     <i class="fas fa-trash"></i>
                 </Buttons>
             </Top>
