@@ -37,6 +37,20 @@ export const updateList = ({userId, title, listId}) => async (dispatch) => {
     return res;
 }
 
+export const createTask = ({listId, userId, title, description}) => async (dispatch) => {
+    const res = await fetch('/api/task/create',{
+        method: 'POST',
+        body: JSON.stringify({
+            listId,
+            userId,
+            title,
+            description
+        })
+    })
+    dispatch(setLists(res.data.lists));
+    return res
+}
+
 export const deleteList = ({userId, listId}) => async (dispatch) => {
     const res = await fetch(`/api/lists/delete/${listId}`, {
         method: 'DELETE',

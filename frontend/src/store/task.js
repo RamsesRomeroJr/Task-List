@@ -33,6 +33,43 @@ export const deleteTask = ({taskId}) => async() => {
     return
 }
 
+//comment fetches
+export const createComment = ({userId,taskId,content}) => async(dispatch)=>{
+    const res = await fetch('/api/comment/create',{
+        method: 'POST',
+        body:JSON.stringify({
+            userId,
+            taskId,
+            content
+        })
+    })
+    dispatch(setTask(res.data.task));
+    return res
+}
+
+export const updateComment = ({commentId, content, taskId}) => async(dispatch)=>{
+    const res = await fetch(`/api/comment/update/${commentId}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            content,
+            taskId
+        })
+    })
+    dispatch(setTask(res.data.task));
+    return res
+}
+
+export const deleteComment = ({commentId, taskId}) => async(dispatch)=>{
+    const res = await fetch(`/api/comment/delete:${commentId}`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+            taskId
+        })
+    })
+    dispatch(setTask(res.data.task));
+    return res
+}
+
 function reducer(state = {task:null}, action){
     let newState;
     switch (action.type) {

@@ -92,7 +92,24 @@ router.post('/create', asyncHandler(async(req,res) => {
         {listId,userId,title,description, complete:false}
     )
 
-    res.json({message: 'good'})
+    const list = await List.findAll( {
+        include:[
+            {
+                model: User,
+            },
+            {
+                model: Task,
+                order: [
+                    [Task, 'creatidedAt', 'ASC']
+                ],
+                include : {
+                    model: Comment
+                }
+            },
+        ]
+    });
+
+    res.json({lists: list})
 }));
 
 router.delete('/delete/:id', asyncHandler(async(req,res) => {
