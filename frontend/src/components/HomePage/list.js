@@ -4,21 +4,18 @@ import { NavLink } from "react-router-dom";
 import Task from './task.js'
 import {deleteList} from '../../store/lists.js'
 import {useDispatch, useSelector} from 'react-redux'
+import EditList from '../EditList/index.js'
 
 const ListContainer = styled.div`
     border:solid 0.5px lightgrey;
     box-shadow: 0 1px 5px 0px rgba(0,0,0,0.6);
     margin-top:20px;
-
-    /* &:hover{
-        box-shadow: 0 5px 15px 0px rgb(0,140,151, 0.6);
-    } */
 `
 
 const Top = styled.div`
     display:flex;
-    justify-content:center;
-    align-self:flex-start;
+    justify-content:space-around;
+    align-self:center;
 `
 
 const Title = styled.h3`
@@ -42,8 +39,6 @@ const Bottom = styled.div`
 const Buttons = styled.div`
     height: 16px;
     align-self:center;
-    padding-right: 30px;
-    padding-left: 30px;
 
     &:hover{
         color: rgb(0,140,151, 0.6);
@@ -80,9 +75,7 @@ function List ({list}){
         <ListContainer>
             <Top>
                 {(sessionUser.id === list.userId)?
-                <Buttons>
-                    <i class="fas fa-pen-square"></i>
-                </Buttons> :
+                <EditList userId={sessionUser.id} listId={list.id} listTitle={list.title}/> :
                 <></>}
                 <Title>{list.title}</Title>
                 {(sessionUser.id === list.userId)?
