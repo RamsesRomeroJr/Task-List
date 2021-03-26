@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage";
-import SignupFormPage from "./components/SignupFormPage";
 import SplashPage from "./components/SplashPage";
+import HomePage from "./components/HomePage/index.js"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -23,7 +22,7 @@ function App() {
           </Route>
           <Route path="/home">
           <Navigation isLoaded={isLoaded} />
-            <h1>list</h1>
+            <HomePage />
           </Route>
         </Switch>
       )}
