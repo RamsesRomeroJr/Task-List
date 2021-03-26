@@ -3,11 +3,13 @@ import styled from 'styled-components'
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import {getLists} from '../../store/lists.js'
+import AddListButton from './addListButton.js'
 import List from './list.js'
 
 const Title = styled.div`
     display:flex;
     justify-content:center;
+    align-items: center;
 `
 
 const ListsContainer = styled.div`
@@ -23,7 +25,6 @@ const ListsContainer = styled.div`
     padding-top: 15px;
     padding-bottom: 50px;
 `
-
 function HomePage (){
     const dispatch = useDispatch()
     const sessionUser = useSelector((state)=> state.session.user)
@@ -39,8 +40,9 @@ function HomePage (){
 
     return(
         <div>
-            <Title style={{display:"flex", justifyContent:"center"}}>
+            <Title>
                 <h1>Lists</h1>
+                <AddListButton userId={sessionUser.id}/>
             </Title>
             <ListsContainer>
                 {!allLists && <h2>Sorry No Current Lists</h2>}
