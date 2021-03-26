@@ -11,9 +11,11 @@ const Title = styled.div`
 `
 
 const ListsContainer = styled.div`
-    display:flex;
-    justify-content:center;
-    /* flex-direction:column; */
+    box-sizing:border-box;
+    display: grid;
+    grid-template-rows: repeat(auto-fill);
+    justify-content: center;
+    grid-gap: 27px;
 `
 
 function HomePage (){
