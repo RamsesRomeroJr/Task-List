@@ -12,10 +12,16 @@ const Title = styled.div`
 
 const ListsContainer = styled.div`
     box-sizing:border-box;
-    display: grid;
-    grid-template-rows: repeat(auto-fill);
-    justify-content: center;
-    grid-gap: 27px;
+    display: flex;
+    flex-direction:row;
+    width: auto;
+    flex-wrap:wrap;
+    /* grid-template-columns: repeat(auto-fill,390px); */
+    justify-content: space-evenly;
+    /* grid-auto-rows: auto; */
+    /* grid-gap: 27px; */
+    padding-top: 15px;
+    padding-bottom: 50px;
 `
 
 function HomePage (){
