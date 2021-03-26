@@ -18,13 +18,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* font-size: 1.2rem; */
-    /* position: sticky; */
     top: 0;
     z-index: 999;
-    /* --neon-text-color: green; */
-    --neon-border-color: green;
-    animation: flicker 0s infinite alternate;
   }
 
   .home-Link{
@@ -52,5 +47,5 @@
 }
 
 .title:hover{
-    color: rgb(0,140,151);
+    color: rgb(0,140,151, 0.6);
   }
