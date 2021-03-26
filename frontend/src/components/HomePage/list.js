@@ -79,13 +79,19 @@ function List ({list}){
     return (
         <ListContainer>
             <Top>
+                {(sessionUser.id === list.userId)?
                 <Buttons>
                     <i class="fas fa-pen-square"></i>
-                </Buttons>
+                </Buttons> :
+                <></>}
                 <Title>{list.title}</Title>
+                {(sessionUser.id === list.userId)?
+
                 <Buttons onClick={deleteListClick}>
                     <i class="fas fa-trash"></i>
-                </Buttons>
+                </Buttons> :
+                <></>
+                }
             </Top>
             <Mid>
                 <Creator>Created By: {user.username}</Creator>
