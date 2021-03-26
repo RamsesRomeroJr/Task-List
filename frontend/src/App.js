@@ -21,13 +21,9 @@ function App() {
           <Route exact path="/">
             <SplashPage />
           </Route>
-          <Route path="/login">
+          <Route path="/home">
           <Navigation isLoaded={isLoaded} />
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-          <Navigation isLoaded={isLoaded} />
-            <SignupFormPage />
+            <h1>list</h1>
           </Route>
         </Switch>
       )}

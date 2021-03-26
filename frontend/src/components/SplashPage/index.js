@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 import SignupFormPage from '../SignupFormPage/index.js'
 import LoginFormPage from '../LoginFormPage/index.js'
+import { useSelector } from 'react-redux';
+import { Redirect } from "react-router-dom";
 
 const Splash = styled.div`
     display:flex;
@@ -74,6 +76,8 @@ const LoginButton = styled.button`
 function SplashPage(){
 
     let [signupForm, setSignupForm] = useState(false);
+    const sessionUser = useSelector((state) => state.session.user);
+    if (sessionUser) return <Redirect to="/home" />;
 
     return(
         <Splash>
