@@ -3,7 +3,7 @@
     list-style-type: none;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid green;
+    border: 1px solid rgb(0,140,151, 0.6);
     padding: 10px;
     margin-top: 4px;
     font-family: 'Staatliches', cursive;
@@ -28,7 +28,7 @@
   }
 
   .login-button{
-    margin-right: 35px;
+    margin-right: 200px;
   }
 
   .login-signup{
@@ -49,3 +49,8 @@
 .title:hover{
     color: rgb(0,140,151, 0.6);
   }
+
+.login-button:hover{
+  color: rgb(0,140,151, 0.6);
+  cursor: pointer;
+}
