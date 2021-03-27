@@ -155,10 +155,10 @@ To get started follow the following steps
 - Being able to comment on task
 <img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/PostComment.gif?raw=true" />
 
--Being able to edit comments (only creator of comment or list can edit)
+- Being able to edit comments (only creator of comment or list can edit)
 <img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/EditComment.gif?raw=true"/>
 
--Being able to delete comments (only creator of comment or list can delete)
+- Being able to delete comments (only creator of comment or list can delete)
 <img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/DeleteComment.gif?raw=true" />
 
 <!-- ROADMAP -->
