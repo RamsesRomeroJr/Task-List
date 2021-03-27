@@ -50,7 +50,9 @@ const CommentButton = styled.button`
   }
 `;
 
-
+const Container = styled.div`
+    margin-top: 200px;
+`
 
 
 function PostComment({userId,taskId}){
@@ -64,7 +66,7 @@ function PostComment({userId,taskId}){
     }
 
     return(
-        <>
+        <Container>
             <form onSubmit={handleSubmit}>
                 <ListForm>
                     <Input
@@ -77,7 +79,7 @@ function PostComment({userId,taskId}){
                     <CommentButton type='submit'>Comment</CommentButton>
                 </ListForm>
             </form>
-        </>
+        </Container>
     )
 }
 

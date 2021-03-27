@@ -45,8 +45,8 @@ const Buttons = styled.div`
 const InfoContainer = styled.div`
     display:flex;
     justify-content:center;
-    align-items: center;
-    flex-direction: column;
+    /* align-items: center; */
+    flex-direction: row;
     margin:0px;
     box-sizing:border-box;
 `
@@ -107,8 +107,8 @@ function TaskPage (){
                         return <Comment key={comment.id} comment={comment} task={task} user={sessionUser}/>
                     })}
                     <br/>
-                    <PostComment userId={sessionUser.id} taskId={task.id} />
                 </Info>
+                <PostComment userId={sessionUser.id} taskId={task.id} />
             </InfoContainer>
         </div>
     )
