@@ -106,24 +106,37 @@ To get started follow the following steps
     ```sh
     npm install
     ```
-4. start backend server
+4. Create Database
+    ```sh
+    npx dotenv sequelize-cli db:create
+    ```
+    
+5. Run Migrations 
+    ```sh
+    npx dotenv sequelize-cli db:migrate
+    ```
+6. Run seed data 
+    ```sh
+    npx dotenv sequelize-cli db:seed:all
+    ```
+7. start backend server
     ```sh
     npm start
     ```
-5. open up new terminal then back out to main folder then into frontend
+8. open up new terminal then back out to main folder then into frontend
     ```sh
     cd ..
     cd frontend/
     ```
-6. install frontend packages
+9. install frontend packages
     ```sh
     npm install
     ```
-7. start frontend server
+10. start frontend server
     ```sh
     npm start
     ```
-8. Enjoy To do list on local server!
+11. Enjoy To do list on local server!
 
 
 <!-- USAGE EXAMPLES -->
