@@ -25,7 +25,10 @@ router.post('/create', asyncHandler(async(req,res) => {
                 model: List
             },
             {
-                model: Comment
+                model: Comment,
+                include: {
+                    model:User
+                }
             },
             {
                 model: User
@@ -54,7 +57,10 @@ router.put('/update/:id', asyncHandler(async(req,res) => {
                 model: List
             },
             {
-                model: Comment
+                model: Comment,
+                include: {
+                    model:User
+                }
             },
             {
                 model: User
@@ -80,7 +86,10 @@ router.delete('/delete/:id', asyncHandler(async(req,res) => {
                 model: List
             },
             {
-                model: Comment
+                model: Comment,
+                include: {
+                    model:User
+                }
             },
             {
                 model: User

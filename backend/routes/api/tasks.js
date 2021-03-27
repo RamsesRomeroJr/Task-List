@@ -13,7 +13,10 @@ router.get('/:id', asyncHandler(async(req,res) => {
                 model: List
             },
             {
-                model: Comment
+                model: Comment,
+                include: {
+                    model:User
+                }
             },
             {
                 model: User
@@ -43,7 +46,10 @@ router.put('/update/:id', asyncHandler(async(req,res) => {
                 model: List
             },
             {
-                model: Comment
+                model: Comment,
+                include: {
+                    model:User
+                }
             },
             {
                 model: User
@@ -70,7 +76,10 @@ router.put('/check/:id', asyncHandler(async(req,res) => {
                 model: List
             },
             {
-                model: Comment
+                model: Comment,
+                include: {
+                    model:User
+                }
             },
             {
                 model: User

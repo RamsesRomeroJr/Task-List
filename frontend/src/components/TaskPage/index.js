@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux"
 import {getTask, deleteTask} from '../../store/task.js'
 import CheckBox from './checkBox'
 import EditTask from './editTask.js'
+import Comment from './comment'
 
 const TitleContainer = styled.div`
     display:flex;
@@ -98,7 +99,12 @@ function TaskPage (){
                 <Info>
                     <h3>Description: </h3>
                     <h4>{task.description}</h4>
-
+                    <br/>
+                    <h3>Comments: </h3>
+                    {!task.Comments && <h2>Leave A Comment Below</h2>}
+                    {task.Comments && task.Comments.map(comment => {
+                        return <Comment key={comment.id} comment={comment} task={task} user={sessionUser}/>
+                    })}
                 </Info>
             </InfoContainer>
         </div>
