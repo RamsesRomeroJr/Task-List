@@ -51,7 +51,7 @@ const CommentButton = styled.button`
 `;
 
 const Container = styled.div`
-    margin-top: 200px;
+    /* margin-top: 200px; */
 `
 
 

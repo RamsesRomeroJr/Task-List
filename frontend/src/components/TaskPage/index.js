@@ -113,8 +113,8 @@ function TaskPage (){
                         return <Comment key={comment.id} comment={comment} task={task} user={sessionUser}/>
                     })}
                     <br/>
-                </Info>
                 <PostComment userId={sessionUser.id} taskId={task.id} />
+                </Info>
             </InfoContainer>
         </div>
     )

@@ -14,6 +14,7 @@ export const getTask = (taskId) => async (dispatch) => {
     return res;
 }
 
+
 export const updateTask = ({taskId, title, description}) => async(dispatch) =>{
     const res = await fetch(`/api/task/update/${taskId}`, {
         method: 'PUT',
