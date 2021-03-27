@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {useDispatch} from 'react-redux'
 import {checkTask, getTask} from '../../store/task.js'
@@ -17,21 +17,19 @@ const Checked = styled.div`
 
 
 function CheckBox ({task}){
-    const [isComplete, setIsComplete] = useState(task.complete)
     const dispatch = useDispatch()
 
     function check (){
         dispatch(checkTask({taskId:task.id}))
-        setIsComplete(!task.complete)
     }
     return (
         <div>
-            {!isComplete && (
+            {!task.complete && (
                 <UnChecked onClick={check}>
                     <i class="far fa-square fa-2x"></i>
                 </UnChecked>
             )}
-            {isComplete && (
+            {task.complete && (
                 <Checked onClick={check}>
                     <i class="far fa-check-square fa-2x"></i>
                 </Checked>

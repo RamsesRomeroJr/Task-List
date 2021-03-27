@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import { Redirect, useParams } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux"
-import {getTask, deleteTask} from '../../store/task.js'
+import {getTask, deleteTask, deleteComment} from '../../store/task.js'
 import CheckBox from './checkBox'
 import EditTask from './editTask.js'
 import Comment from './comment'
@@ -76,6 +76,10 @@ function TaskPage (){
     if(!task){
         return <h3>Loading..</h3>
     }
+
+    // function deleteCommentClick(){
+    //     dispatch(deleteComment({taskId:task.id, commentId: }))
+    // }
 
     return(
         <div>

@@ -49,6 +49,11 @@ const ActionButtons = styled.div`
     box-sizing:border-box;
 `
 function Comment ({comment, task, user}){
+    const dispatch = useDispatch()
+
+    function deleteCommentClick(){
+        dispatch(deleteComment({taskId:task.id, commentId: comment.id}))
+    }
 
     return(
         <CommentContainer>
@@ -61,7 +66,7 @@ function Comment ({comment, task, user}){
                         <EditComment taskId={task.id} content={comment.content} commentId={comment.id}/> :
                         <></>}
                 {(user.id === task.List.userId || user.id === task.userId || user.id === comment.User.id)?
-                        <Buttons >
+                        <Buttons onClick={deleteCommentClick}>
                             <i class="fas fa-trash"></i>
                         </Buttons> :
                         <></>

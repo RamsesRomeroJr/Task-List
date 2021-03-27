@@ -68,7 +68,7 @@ export const updateComment = ({commentId, content, taskId}) => async(dispatch)=>
 }
 
 export const deleteComment = ({commentId, taskId}) => async(dispatch)=>{
-    const res = await fetch(`/api/comment/delete:${commentId}`, {
+    const res = await fetch(`/api/comment/delete/${commentId}`, {
         method: 'DELETE',
         body: JSON.stringify({
             taskId
