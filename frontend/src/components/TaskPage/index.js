@@ -6,6 +6,7 @@ import {getTask, deleteTask} from '../../store/task.js'
 import CheckBox from './checkBox'
 import EditTask from './editTask.js'
 import Comment from './comment'
+import PostComment from './postComment'
 
 const TitleContainer = styled.div`
     display:flex;
@@ -105,6 +106,8 @@ function TaskPage (){
                     {task.Comments && task.Comments.map(comment => {
                         return <Comment key={comment.id} comment={comment} task={task} user={sessionUser}/>
                     })}
+                    <br/>
+                    <PostComment userId={sessionUser.id} taskId={task.id} />
                 </Info>
             </InfoContainer>
         </div>
