@@ -55,7 +55,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#wireframe">Wireframe</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -125,10 +124,6 @@ To get started follow the following steps
     npm start
     ```
 8. Enjoy To do list on local server!
-
-## Wireframe
-
-### Wireframe that started the layout idea during planning 
 
 
 <!-- USAGE EXAMPLES -->
