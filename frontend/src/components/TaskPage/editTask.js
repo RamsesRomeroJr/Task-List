@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import {updateList} from '../../store/lists.js';
+import {updateTask} from '../../store/task.js';
 import styled from 'styled-components'
 
 const EditButton = styled.div`
@@ -8,12 +8,13 @@ const EditButton = styled.div`
     align-items:center;
     justify-content:center;
     cursor: pointer;
+
     &:hover{
         color: rgb(0,140,151, 0.6);
         cursor: pointer;
     }
 `
-const ListForm = styled.div`
+const TaskForm = styled.div`
     display:flex;
     flex-direction:column;
     position: absolute;
@@ -37,6 +38,18 @@ const Input = styled.input`
   outline:none;
 `;
 
+const Text = styled.textarea`
+    margin-bottom:20px;
+    margin-top:10px;
+    padding: 8px 0 8px 8px;
+    border:solid 0.5px lightgrey;
+    box-shadow: 0 1px 2px 0px rgba(0,0,0,0.6);
+    justify-self: center;
+    background-color:#FCFAF0;
+    color:grey;
+    outline:none;
+`
+
 const UpdateButton = styled.button`
   width:75px;
   margin-bottom:4px;
@@ -54,10 +67,11 @@ const UpdateButton = styled.button`
   }
 `;
 
-function EditList({userId,listId, listTitle}){
+function EditTask({userId,taskId, taskTitle, taskDescription}){
     const dispatch = useDispatch();
     const [showForm, setShowForm] = useState(false);
-    const [title, setTitle] = useState(listTitle)
+    const [title, setTitle] = useState(taskTitle)
+    const [description, setDescription] = useState(taskDescription)
 
     const openForm = () => {
         if(showForm) return;
@@ -75,7 +89,7 @@ function EditList({userId,listId, listTitle}){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(updateList({userId, title, listId}))
+        dispatch(updateTask({userId, title, taskId, description}))
         closeForm()
     }
 
@@ -86,17 +100,23 @@ function EditList({userId,listId, listTitle}){
         </EditButton>
         {showForm && (
         <form onSubmit={handleSubmit}>
-            <ListForm>
-                <h3>Edit Title</h3>
+            <TaskForm>
+                <h3>Edit Task</h3>
                 <Input
                     type='text'
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
                     />
-                <UpdateButton type='submit'>Edit Title</UpdateButton>
+                <Text
+                    type='text'
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                    />
+                <UpdateButton type='submit'>Confirm</UpdateButton>
                 <UpdateButton type='button' onClick={closeForm}>Cancel</UpdateButton>
-            </ListForm>
+            </TaskForm>
         </form>
         )}
         </>
@@ -105,4 +125,4 @@ function EditList({userId,listId, listTitle}){
 
 }
 
-export default EditList;
+export default EditTask;

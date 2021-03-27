@@ -19,8 +19,7 @@ const Top = styled.div`
 const Title = styled.h4`
     margin-left: 5px;
     margin-right: 20px;
-    /* align-self:flex-start; */
-    /* justify-self:flex-start; */
+    color:black;
 `
 
 const Status = styled.h5`
@@ -28,12 +27,14 @@ const Status = styled.h5`
 `
 const CommentCount = styled.h5`
     margin:0px 0px 5px 5px;
+    color:grey;
 `
 
 function Task ({task}){
 
     return(
         <TaskContainer>
+            <NavLink style={{textDecoration: 'none'}} to={`/task/${task.id}`}>
             <Top>
                 <Title>{task.title}</Title>
                 {!task.complete && <Status style={{color:'red'}}>Incomplete</Status>}
@@ -41,6 +42,7 @@ function Task ({task}){
             </Top>
             {!task.Comments && <CommentCount> 0 Comments</CommentCount>}
             {task.Comments && <CommentCount> {task.Comments.length} Comments</CommentCount>}
+            </NavLink>
         </TaskContainer>
     )
 }

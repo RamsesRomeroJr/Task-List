@@ -12,7 +12,7 @@ router.use('/users', usersRouter);
 
 router.use('/lists', listRouter);
 
-router.use('/tasks', taskRouter);
+router.use('/task', taskRouter);
 
 router.use('/comment', commentRouter);
 

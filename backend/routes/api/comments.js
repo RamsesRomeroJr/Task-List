@@ -19,30 +19,84 @@ router.post('/create', asyncHandler(async(req,res) => {
         }
     )
 
-    res.json({message: 'commented'})
+    const task = await Task.findByPk(taskId, {
+        include: [
+            {
+                model: List
+            },
+            {
+                model: Comment,
+                include: {
+                    model:User
+                }
+            },
+            {
+                model: User
+            }
+        ]
+    })
+    res.json({task: task})
 }))
 
 router.put('/update/:id', asyncHandler(async(req,res) => {
     const commentId = Number(req.params.id)
 
-    const {content} = req.body
+    const {
+        content,
+        taskId
+    } = req.body
 
     await Comment.update(
         {content},
         {where: {id: commentId}}
     )
 
-    res.json({message: 'updated'})
+    const task = await Task.findByPk(taskId, {
+        include: [
+            {
+                model: List
+            },
+            {
+                model: Comment,
+                include: {
+                    model:User
+                }
+            },
+            {
+                model: User
+            }
+        ]
+    })
+    res.json({task: task})
 }))
 
 router.delete('/delete/:id', asyncHandler(async(req,res) => {
     const commentId = Number(req.params.id)
+    const {
+        taskId
+    } = req.body
 
     await Comment.destroy(
         {where: {id: commentId}}
     )
 
-    res.json({message: 'deleted'})
+    const task = await Task.findByPk(taskId, {
+        include: [
+            {
+                model: List
+            },
+            {
+                model: Comment,
+                include: {
+                    model:User
+                }
+            },
+            {
+                model: User
+            }
+        ]
+    })
+    res.json({task: task})
 }))
 
 module.exports = router;

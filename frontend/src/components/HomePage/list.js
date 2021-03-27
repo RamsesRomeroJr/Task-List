@@ -5,6 +5,7 @@ import Task from './task.js'
 import {deleteList} from '../../store/lists.js'
 import {useDispatch, useSelector} from 'react-redux'
 import EditList from '../EditList/index.js'
+import AddTaskButton from './addTaskButton'
 
 const ListContainer = styled.div`
     border:solid 0.5px lightgrey;
@@ -90,6 +91,7 @@ function List ({list}){
                 <Creator>Created By: {user.username}</Creator>
             </Mid>
             <TaskTitle>Tasks: </TaskTitle>
+            <AddTaskButton userId={sessionUser.id} listId={list.id}/>
             <Bottom>
                 <TaskContainer>
                     {!tasks && <h4>No Current Tasks</h4>}
