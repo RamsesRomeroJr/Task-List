@@ -7,7 +7,7 @@ import taskReducer from './task'
 const rootReducer = combineReducers({
   session: sessionReducer,
   homePage: listsReducer,
-  task: taskReducer,
+  taskPage: taskReducer,
 });
 
 let enhancer;

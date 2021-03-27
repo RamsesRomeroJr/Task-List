@@ -26,6 +26,14 @@ export const updateTask = ({taskId, title, description}) => async(dispatch) =>{
     return res
 }
 
+export const checkTask = ({taskId}) => async(dispatch) => {
+    const res = await fetch(`/api/task/check/${taskId}`, {
+        method: 'PUT'
+    })
+    dispatch(setTask(res.data.task));
+    return res
+}
+
 export const deleteTask = ({taskId}) => async() => {
     const res = await fetch(`/api/task/delete/${taskId}`, {
         method: 'DELETE'
