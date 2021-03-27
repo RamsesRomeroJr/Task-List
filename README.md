@@ -25,7 +25,7 @@
 
 
   <h3 align="center">Trustero Take Home</h3>
-
+  <img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/HomePage.jpg?raw=true" />
   <p align="center">
     This was a take home coding assignment
     <br />
@@ -130,6 +130,36 @@ To get started follow the following steps
 ## Usage
 
 ### Some of the features that you can use with this project
+
+- Being able to sign-up/login/demo login
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/SplashLogin.gif?raw=true" />
+
+- Being able to create new list
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/NewList.gif?raw=true" />
+
+- Being able to create new task for lists
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/NewTask.gif?raw=true" />
+
+- Being able to edit list title (of list you created only)
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/EditList.gif?raw=true" />
+
+- Being able to delete list and all Tasks/Comments within list (of list you created only)
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/DeleteList.gif?raw=true" />
+
+- Being able to check a Task Completed or Incomplete 
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/Check-Uncheck-Task.gif?raw=true" />
+
+- Being able to edit and/or delete task (only creators of task or list can do so)
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/DeleteTask.gif?raw=true "/>
+
+- Being able to comment on task
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/PostComment.gif?raw=true" />
+
+-Being able to edit comments (only creator of comment or list can edit)
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/EditComment.gif?raw=true"/>
+
+-Being able to delete comments (only creator of comment or list can delete)
+<img src="https://github.com/RamsesRomeroJr/Task-List/blob/main/readme-materials/DeleteComment.gif?raw=true" />
 
 <!-- ROADMAP -->
 ## Roadmap
