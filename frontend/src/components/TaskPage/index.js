@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components'
-import { Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams, useHistory } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux"
-import {getTask, deleteTask, deleteComment} from '../../store/task.js'
+import {getTask, deleteTask} from '../../store/task.js'
 import CheckBox from './checkBox'
 import EditTask from './editTask.js'
 import Comment from './comment'
@@ -60,6 +60,7 @@ const Info = styled.div`
 function TaskPage (){
     const dispatch = useDispatch()
     const {id} = useParams()
+    const history = useHistory()
 
     const sessionUser = useSelector((state)=> state.session.user)
     const task = useSelector((state)=> state.taskPage.task)
@@ -77,9 +78,10 @@ function TaskPage (){
         return <h3>Loading..</h3>
     }
 
-    // function deleteCommentClick(){
-    //     dispatch(deleteComment({taskId:task.id, commentId: }))
-    // }
+    function deleteTaskClick(){
+        dispatch(deleteTask({taskId:task.id}))
+        history.push('/')
+    }
 
     return(
         <div>
@@ -90,7 +92,7 @@ function TaskPage (){
                     <></>}
                     <TitleText>{task.title}</TitleText>
                     {(sessionUser.id === task.List.userId || sessionUser.id === task.userId)?
-                    <Buttons >
+                    <Buttons onClick={deleteTaskClick}>
                         <i class="fas fa-trash"></i>
                     </Buttons> :
                     <></>
