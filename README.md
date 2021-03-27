@@ -165,6 +165,7 @@ To get started follow the following steps
 ## Roadmap
 
 For all planning done before hand check it out [here](https://github.com/RamsesRomeroJr/Task-List/wiki)
+If you wanna see how I set up all the tasks to complete, check it out [here](https://github.com/RamsesRomeroJr/Task-List/projects/1)
 
 
 <!-- CONTACT -->
